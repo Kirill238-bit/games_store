@@ -1,0 +1,24 @@
+
+.info{
+    display: flex;
+    justify-content:space-around;
+
+    &_icon{
+        display: flex;
+    }
+
+    &_menu{
+        display: block;
+        max-height: 134px;
+    }
+
+    &_social{
+        display: flex;
+    }
+}
+
+.images{
+display: flex;
+justify-content: center;
+justify-content: space-around;
+}
