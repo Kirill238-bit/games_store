@@ -1,24 +1,74 @@
-
+.wrapper{
+    margin-top: 18px;
+    padding-top: 40px;
+    border-top:2px solid orange;
+}
 .info{
     display: flex;
     justify-content:space-around;
 
     &_icon{
         display: flex;
+        max-height: 35px;
+        max-width: 120px;
+
+        &_title{
+            font-size: 20px;
+            font-weight: 700;
+            margin-left: 8px;
+        }
     }
 
     &_menu{
-        display: block;
-        max-height: 134px;
+        display: flex;
+        justify-content: space-around;
+
+        &_block{
+            margin-left: 50px;
+            margin-bottom: 24px;
+            padding-right: 50px;
+
+            div{
+                margin-bottom: 24px;
+                padding-right: 20px;
+            }
+            div:hover{
+                color:orange;
+                transition:0.7s;
+            }
+        }
     }
 
     &_social{
         display: flex;
+        justify-content: flex-end;
+        align-items: flex-start;
+
+        div{
+            margin-left: 10px;
+        }
+        &_teleg{
+            padding-top: 3px;
+        }
     }
 }
 
 .images{
 display: flex;
-justify-content: center;
-justify-content: space-around;
+
+    &_kassa{
+        margin-top: 8px;
+    }
+}
+
+.notification_conteiner{
+    margin-top: 30px;
+    display: flex;
+    max-width:735px;
+    align-items: center;
+    
+    &_text{
+        color:#fbbb43;
+        font-size: 16px;
+    }
 }
