@@ -1,3 +1,5 @@
+import Slider from '@/components/slider'
+import { SliderGames } from '@/data/sliderGames'
 import Image from 'next/image'
 import styles from '../styles/page.module.scss'
 
@@ -5,7 +7,7 @@ export default function Home() {
   return (
     <main>
       <div>
-        <h1>Главная страница</h1>
+        <Slider games={SliderGames}/>
       </div>
     </main>
   )

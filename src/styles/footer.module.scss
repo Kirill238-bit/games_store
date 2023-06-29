@@ -2,6 +2,7 @@
     margin-top: 18px;
     padding-top: 40px;
     border-top:2px solid orange;
+    padding-bottom: 40px;
 }
 .info{
     display: flex;
@@ -55,7 +56,10 @@
 
 .images{
 display: flex;
-
+justify-content: center;
+    div{
+        margin-right: 46px;
+    }
     &_kassa{
         margin-top: 8px;
     }
@@ -64,8 +68,14 @@ display: flex;
 .notification_conteiner{
     margin-top: 30px;
     display: flex;
-    max-width:735px;
     align-items: center;
+    justify-content: center;
+
+    &_image{
+        margin-right:6px;
+        border: #fbbb43 1px solid;
+        border-radius: 50%;
+    }
     
     &_text{
         color:#fbbb43;

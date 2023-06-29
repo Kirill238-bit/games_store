@@ -11,7 +11,7 @@ export default function Footer(){
                         <Link href='/'>
                             <div className={style.info_icon_image}>
                                 <Image 
-                                    src="/images/control_icon.png"
+                                    src="/images/controller_icon.png"
                                     alt="контроллер"
                                     height={50}
                                     width={50}/>
@@ -112,6 +112,13 @@ export default function Footer(){
                 </div>
 
                 <div className={style.notification_conteiner}>
+                    <div className={style.notification_conteiner_image}>
+                        <Image 
+                           src="/images/noPirate_icon.png" 
+                           alt="пираты"
+                           width={50} 
+                           height={50}/>
+                    </div>
                     <div className={style.notification_conteiner_text}>
                     Все продаваемые ключи закупаются у официальных дистрибьюторов<br/>
                     и издателей. В том числе у 1С-СофтКлаб, Бука, Новый Диск и Enaza.

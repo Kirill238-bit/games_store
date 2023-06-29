@@ -1,4 +1,5 @@
 .wrapper{
+max-width: 1240px;
 display: flex;
 justify-content: space-around;
 margin-top: 20px;
@@ -20,10 +21,11 @@ padding-bottom: 15px;
 }
 .games_conteiner{
 
-    margin-top: 12px;
+    margin-top: 8px;
     &_button{
-        font-size: 18px;
-        font-weight: 400;
+        font-size: 22px;
+        font-weight: 700;
+        color:#fff;
         text-decoration: none;
         }
 }

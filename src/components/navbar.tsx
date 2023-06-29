@@ -9,7 +9,7 @@ export default function Navbar(){
                 <Link href='/'>
                 <div className={style.icon_conteiner_image}>
                     <Image 
-                      src="/images/control_icon.png"
+                      src="/images/controller_icon.png"
                       alt="контроллер"
                       height={50}
                       width={50}/>
@@ -27,10 +27,10 @@ export default function Navbar(){
             <div className={style.basket_conteiner}>
                 <Link href='/basket'>
                     <Image
-                       src="/images/basket_icon.png"
+                       src="/images/cart_icon.png"
                        alt="корзина"
-                       height={50}
-                       width={50}
+                       height={40}
+                       width={40}
                        />
                 </Link>
             </div>
