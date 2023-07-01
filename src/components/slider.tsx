@@ -9,20 +9,20 @@ name:string,
 }
 
 type SliderProps={
-    games: SliderGames[];
+    sliderGames: SliderGames[];
 }
 
-const Slider:React.FC<SliderProps>=({games})=>{
+const Slider:React.FC<SliderProps>=({sliderGames})=>{
 
     const [position,setPosition]=useState(0);//позиция слайда
-
+/*
     const [activeOne,setActiveOne]=useState(true);
     const [activeTwo,setActiveTwo]=useState(false);
     const [activeThree,setActiveThree]=useState(false);
     const [activeFour,setActiveFour]=useState(false);
     const [activeFive,setActiveFive]=useState(false);
     const [activeSix,setActiveSix]=useState(false);
-
+*/
     //позия слайдера
     const setPrev=()=>{
         if (position > 0) setPosition(position-1);
@@ -32,9 +32,10 @@ const Slider:React.FC<SliderProps>=({games})=>{
     const setNext=()=>{   
         if (position >= 0) setPosition(position+1);
         if(position===5) setPosition(position+0);
-        active();
+       // active();
         console.log(position);
     }
+    /*
     const active=()=>{
         if(position!=0){setActiveOne(false)}else{setActiveOne(true)};
         if(position===1){setActiveTwo(true)}else{setActiveTwo(false)};
@@ -42,12 +43,12 @@ const Slider:React.FC<SliderProps>=({games})=>{
         if(position===3){setActiveFour(true)}else{setActiveFour(false)};
         if(position===4){setActiveFive(true)}else{setActiveFive(false)};
         if(position===5){setActiveSix(true)}else{setActiveSix(false)};
-    }
+    }*/
     
     return(
         <div className={style.conteiner}>
             <div className={style.conteiner_slider}>
-                    {games.map((game,index)=>(
+                    {sliderGames.map((game,index)=>(
                         <div key={index} className={style.slider}
                         style={{ transform: `translateY(-${(position*100)}%)`}}>
                             <div className={style.slider_image}>
@@ -69,12 +70,18 @@ const Slider:React.FC<SliderProps>=({games})=>{
                         className={style.conteiner_buttons_prev}/>
                         </div>
                         <div className={style.radioButtons}>
-                            <div className={activeOne? "radio_active":"radio"}></div>
-                            <div className={activeTwo? "radio_active":"radio"}></div>
-                            <div className={activeThree? "radio_active":"radio"}></div>
-                            <div className={activeFour? "radio_active":"radio"}></div>
-                            <div className={activeFive? "radio_active":"radio"}></div>
-                            <div className={activeSix? "radio_active":"radio"}></div>
+                            <div //className={activeOne? "radio_active":"radio"}
+                            ></div>
+                            <div //className={activeTwo? "radio_active":"radio"}
+                            ></div>
+                            <div //className={activeThree? "radio_active":"radio"}
+                            ></div>
+                            <div //className={activeFour? "radio_active":"radio"}
+                            ></div>
+                            <div //className={activeFive? "radio_active":"radio"}
+                            ></div>
+                            <div //className={activeSix? "radio_active":"radio"}
+                            ></div>
                         </div>
                         <div>
                         <Image src='/images/downE_icon.png'alt='next' width={44} height={44} onClick={setNext} 
