@@ -2,15 +2,7 @@
 import style from '../styles/slider.module.scss'
 import Image from 'next/image'
 import { useState } from 'react';
-
-type SliderGames={
-img:string,
-name:string,
-}
-
-type SliderProps={
-    sliderGames: SliderGames[];
-}
+import { SliderProps } from '@/data/types/SliderProps';
 
 const Slider:React.FC<SliderProps>=({sliderGames})=>{
 
