@@ -24,6 +24,8 @@
     align-items: center;
     
     &_button{
+        max-width: 130px;
+        margin-left: calc(100%/2 - 80px);
         display:block;
         color: #000;
         font-size: 18px;

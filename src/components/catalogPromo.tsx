@@ -4,14 +4,14 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 
-const CatalogPromo:React.FC<GamesMassProps>=({max,Games})=>{
+const CatalogPromo:React.FC<GamesMassProps>=({max,Games,header,button})=>{
     return(
         <div className={style.catalog_promo_conteiner}>
-        <h2 className={style.catalog_promo_conteiner_title}>Лидеры продаж</h2>
+        <h2 className={style.catalog_promo_conteiner_title}>{header}</h2>
         <div className={style.catalog_promo}>
-        {Games.slice(0,max).map((game,index)=>(
-          <div key={index} className={style.shop_item}>
-            <Link href='/games/{id}'>
+        {Games.slice(0,max).map((game)=>(
+          <div key={game.id} className={style.shop_item}>
+            <Link href={`/games/${game.id}`}>
             <div className={style.shop_item_image}>
               <Image 
                 src={game.img} 
@@ -29,12 +29,12 @@ const CatalogPromo:React.FC<GamesMassProps>=({max,Games})=>{
             </div>
           </div>
         ))}
-          <Link href="/catalog">
+        </div>
+        <Link href="/catalog">
             <div className={style.catalog_promo_button}>
-              каталог
+              {button}
             </div>
           </Link>
-        </div>
       </div>
     )
 }

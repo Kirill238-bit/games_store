@@ -4,9 +4,9 @@
     name:string,
     img:string,
     trailer:string,
-    titile?:string,
+    titile:string,
     description:string,
-    genre:string,
+    genres:string[],
     date:string,
     publisher:string,
     developer:string,
@@ -17,4 +17,7 @@
     {
     Games:GamesMassive[];
     max:number;
+    header:string;
+    button:string;
     }
+

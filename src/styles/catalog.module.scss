@@ -1,0 +1,53 @@
+.conteiner{
+    margin: 40px;
+}
+.title{
+    color: #fff;
+    font-size: 42px;
+    margin-bottom: 20px;
+    font-weight: 800;
+
+    span{
+        color:#fbbb43;
+    }
+}
+
+.filtres{
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    font-weight: 300;
+    font-size: 12px;
+    margin-top: 20px;
+
+    div{
+    border: #fff 1px solid;
+    padding: 5px;
+    border-radius: 8px;
+    transition: all 0.5s;
+    cursor: pointer;
+    }
+
+    div:hover{
+        border-color: #fbbb43;
+        color:#fbbb43;
+        scale:(1.1);
+    }
+
+    select{
+        background-color: rgb(22, 18, 18);
+        color:#fff;
+        border: none; 
+        max-width: 120px;   
+    }
+}
+
+.none_button{
+    font-size: 18px;
+    background-color: #fbbb43;
+
+    &_text{
+        color: #000;
+    }
+}
+

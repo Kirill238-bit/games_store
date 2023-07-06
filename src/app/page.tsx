@@ -13,7 +13,7 @@ export default function Home() {
         <Slider sliderGames={SliderGames}/>
       </div>
       <div>
-        <CatalogPromo max={10} Games={Games}/>
+        <CatalogPromo max={10} Games={Games} header={"Лидеры продаж"} button={"каталог"}/>
       </div>
     </main>
   )
