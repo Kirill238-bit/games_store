@@ -2,6 +2,7 @@ import style from '../styles/catalogPromo.module.scss'
 import {GamesMassProps} from '@/data/types/GamesMassProps'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useState } from 'react'
 
 
 const CatalogPromo:React.FC<GamesMassProps>=({max,Games,header,button})=>{
@@ -11,17 +12,17 @@ const CatalogPromo:React.FC<GamesMassProps>=({max,Games,header,button})=>{
         <div className={style.catalog_promo}>
         {Games.slice(0,max).map((game)=>(
           <div key={game.id} className={style.shop_item}>
-            <Link href={`/games/${game.id}`}>
+            <Link href={`/gameItem/${game.id}`}>
             <div className={style.shop_item_image}>
               <Image 
                 src={game.img} 
                 alt={game.name} 
-                width={238} 
-                height={295}/>
+                width={208} 
+                height={280}/>
             </div>
             </Link>
             <div className={style.shop_item_title}>
-              <Link href='/games/{id}'><div className={style.shop_item_title_name}>{game.name}</div></Link>
+              <Link href={`/gameItem/${game.id}`}><div className={style.shop_item_title_name}>{game.name}</div></Link>
                 <div className={style.shop_item_conteiner}>
                   <div className={style.shop_item_conteiner_price}>{game.price} ₽</div>
                  <Link href='/basket'><div className={style.shop_item_conteiner_basket_button}>в корзину</div></Link> 

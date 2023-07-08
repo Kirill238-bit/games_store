@@ -1,7 +1,7 @@
 'use client'
 import CatalogPromo from '@/components/catalogPromo'
 import { Games } from '@/data/games'
-import {GamesMassive,} from '@/data/types/GamesMassProps'
+import { GamesMassive } from '@/data/types/GamesMassProps'
 import style from '@/styles/catalog.module.scss'
 import { useEffect, useState } from 'react'
 

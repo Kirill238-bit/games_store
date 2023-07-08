@@ -1,0 +1,87 @@
+.card_conteiner{
+    max-width: 1240px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+
+    .image{
+        display: inline-block;
+        max-width: 370px;
+        margin-right: 55px;
+        max-width: 370px;
+        overflow: hidden;
+        border:1px solid #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 4px #050505;
+    }
+}
+
+.title{
+    display: block;
+    max-width: 735px;
+    &_name{
+        padding-left: 16px;
+        margin-bottom: 18px;
+        max-width: 735px;
+        padding-right: 5%;
+        width: 100%;
+        font-size: 40px;
+        text-transform: uppercase;
+    }
+
+    &_availeble{
+        display: flex;
+        font-size: 13px;
+        padding-left: 18px;
+    }
+}
+
+.action{
+    margin-top: 20px;
+    display: flex;
+    gap:30px;
+    list-style: none;
+    padding-left: 18px;
+
+    &_button{
+        color: #000;
+        font-size: 18px;
+        text-decoration: none;
+        border-radius: 11px;
+        cursor: pointer;
+        text-transform: uppercase;
+        padding: 11px 12px 8px; 
+        background-color: #fbbb43;
+    }
+    &_button:hover{
+        background-color: #fff;
+    }
+
+    &_price{
+        padding-top: 5px;
+        font-size: 24px;
+        text-transform: uppercase;
+    }
+}
+
+.subinfo{
+    display: flex;
+    max-width: 735px;
+    padding-left:18px;
+    margin-top: 30px;
+
+    &_item{
+        display: block;
+        margin-right: 69px;
+        font-size: 13px;
+        color:#fff;
+
+        &_body{
+            margin-top: 8px;
+            font-weight: 700;
+            font-size: 16px;
+            color:#fbbb43;
+            text-align: center;
+        }
+    }
+}
