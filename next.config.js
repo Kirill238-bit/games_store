@@ -13,4 +13,13 @@ module.exports={
             },
         ],
     },
+    video:{
+        remotePatterns:[
+            {
+                protocol:'https',
+                hostname:'www.youtube.com',
+                port:'',
+            }
+        ]
+    }
 }
