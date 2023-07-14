@@ -1,8 +1,8 @@
 'use client'
-import Slider from '@/components/slider'
+import Slider from '@/components/slider/slider'
 import { SliderGames } from '@/data/sliderGames'
 import { Games } from '@/data/games'
-import CatalogPromo from '@/components/catalogPromo'
+import CatalogPromo from '@/components/catalogPromo/catalogPromo'
 
 
 export default function Home() {

@@ -2,7 +2,8 @@ import style from "@/styles/gameItem.module.scss"
 import { getGameByID } from "@/app/actions/getGame";
 import { GamesMassive } from "@/data/types/GamesMassProps";
 import Image from 'next/image'
-interface Params{
+
+export interface Params{
   params:{
     id:number
   }
@@ -40,6 +41,7 @@ export default function gameItem({ params:{id} }: Params) {
           </div>  
         </div> 
       </div>
+      
       <div className={style.info_conteiner}>
         <div className={style.specification}>
           <div className={style.specification_text}>
@@ -75,8 +77,17 @@ export default function gameItem({ params:{id} }: Params) {
           </div>
         </div>
 
-        <div className={style.trailer}>
-        <iframe width="720" height="410" src={game?.trailer} title="YouTube video player"></iframe>
+          <div className={style.trailer}>
+            <iframe width="720" height="410" src={game?.trailer} title="YouTube video player"></iframe>
+          </div>
+      </div>
+      <div className={style.descriprion_conteiner}>
+        <div>
+          Здесь похожие игры(пилим отдельный компонент)
+        </div>
+
+        <div className={style.description}>
+          здесь описание игры
         </div>
       </div>
     </div>

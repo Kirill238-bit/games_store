@@ -1,4 +1,4 @@
-import style from '../styles/catalogPromo.module.scss'
+import style from './catalogPromo.module.scss'
 import {GamesMassProps} from '@/data/types/GamesMassProps'
 import Image from 'next/image'
 import Link from 'next/link'

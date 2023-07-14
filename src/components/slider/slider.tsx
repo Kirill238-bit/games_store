@@ -1,5 +1,5 @@
 'use client'
-import style from '../styles/slider.module.scss'
+import style from './slider.module.scss'
 import Image from 'next/image'
 import { useState } from 'react';
 import { SliderProps } from '@/data/types/SliderProps';

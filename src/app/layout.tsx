@@ -1,6 +1,6 @@
 import '../styles/globals.scss'
-import Navbar from '../components/navbar'
-import Footer from '../components/footer'
+import Navbar from '../components/navbar/navbar'
+import Footer from '../components/footer/footer'
 import {Fira_Code} from 'next/font/google'
 
  const inter = Fira_Code({

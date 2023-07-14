@@ -98,6 +98,8 @@
         display: flex;
         flex-wrap: wrap;
             div{
+                width: 40px;
+                height: 40px;
                 margin-right: 30px;
                 margin-bottom: 20px;
                 border: 2px solid #fbbb43;
@@ -140,4 +142,9 @@
     border: 3px solid #fbbb43;
     overflow: hidden;
     margin-right: 10px;
+}
+
+.descriprion_conteiner{
+    display: flex;
+    justify-content: space-between;
 }
