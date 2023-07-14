@@ -2,6 +2,8 @@ import style from "@/styles/gameItem.module.scss"
 import { getGameByID } from "@/app/actions/getGame";
 import { GamesMassive } from "@/data/types/GamesMassProps";
 import Image from 'next/image'
+import { getSimilarGames } from "@/app/actions/getSImilar";
+import SimilarGamesSlider from "@/components/similarGamesSlider/similarGamesSlider";
 
 export interface Params{
   params:{
@@ -12,7 +14,11 @@ export default function gameItem({ params:{id} }: Params) {
 
   const game = getGameByID(+id);
 
-  console.log(game);
+  //console.log(game);
+
+  const gamesWithGenre = getSimilarGames(game.genres);
+
+  console.log(gamesWithGenre);
 
   return(
     <div className={style.wrapper}>
@@ -26,12 +32,12 @@ export default function gameItem({ params:{id} }: Params) {
         </div>
 
         <div className={style.title}>
-          <div className={style.title_name}>купить {game?.name}</div>
+          <div className={style.title_name}>купить {game.name}</div>
           <div className={style.title_availeble}><li>В наличии</li></div>
 
           <div className={style.action}>
             <div className={style.action_button}>В корзину</div>
-            <div className={style.action_price}>{game?.price} ₽</div>
+            <div className={style.action_price}>{game.price} ₽</div>
           </div>
 
           <div className={style.subinfo}>
@@ -47,7 +53,7 @@ export default function gameItem({ params:{id} }: Params) {
           <div className={style.specification_text}>
             <div className={style.specification_text_item}>
               <div className={style.unchangeable}>Жанр:</div>
-              <div className={style.changeable}>{game?.genres.join(' ')}</div>
+              <div className={style.changeable}>{game.genres.join(' ')}</div>
             </div>
             <div className={style.specification_text_item}>
               <div className={style.unchangeable}>Платформа:</div>
@@ -55,15 +61,15 @@ export default function gameItem({ params:{id} }: Params) {
             </div>
             <div className={style.specification_text_item}>
               <div className={style.unchangeable}>Дата выхода:</div>
-              <div className={style.changeable}>{game?.date}</div>
+              <div className={style.changeable}>{game.date}</div>
             </div>
             <div className={style.specification_text_item}>
               <div className={style.unchangeable}>Издатель:</div>
-              <div className={style.changeable}>{game?.publisher}</div>
+              <div className={style.changeable}>{game.publisher}</div>
             </div>
             <div className={style.specification_text_item}>
               <div className={style.unchangeable}>Разработчик:</div>
-              <div className={style.changeable}>{game?.developer}</div>
+              <div className={style.changeable}>{game.developer}</div>
             </div>
           </div>
           <div className={style.specification_icons}>
@@ -78,12 +84,12 @@ export default function gameItem({ params:{id} }: Params) {
         </div>
 
           <div className={style.trailer}>
-            <iframe width="720" height="410" src={game?.trailer} title="YouTube video player"></iframe>
+            <iframe width="720" height="410" src={game.trailer} title="YouTube video player"></iframe>
           </div>
       </div>
       <div className={style.descriprion_conteiner}>
         <div>
-          Здесь похожие игры(пилим отдельный компонент)
+          <SimilarGamesSlider Games={gamesWithGenre}/>
         </div>
 
         <div className={style.description}>

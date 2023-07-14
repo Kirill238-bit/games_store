@@ -1,0 +1,89 @@
+.wrapper{
+    margin-top: 15px;
+    max-width: 100%;
+    a{
+        text-decoration: none;
+    }
+    &_slider{
+        max-width: 388px;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+    }
+    &_title{
+        width: 180px;
+        font-size: 24px;
+        margin-bottom: 30px;
+        padding-left: 10px;
+        color: rgb(22, 18, 18);
+        background-color: #fbbb43;
+        border: 3px solid #fbbb43;
+        border-radius: 24px;
+    }
+}
+
+
+
+.slider_item{
+    width: 177px;
+    height: 324px;
+    border: 1px solid #fff;
+    border-radius: 16px;
+    margin-right: 10px;
+    margin-left: 8px;
+    transition: 1.3s ease-in-out;
+    &_image{
+        border-radius: 16px;
+        overflow: hidden;
+        margin-bottom: 8px;
+    }
+
+    &_title{
+        display: block;
+        margin-left:4px;
+        margin-right:4px;
+
+        &_name{
+            text-decoration: none;
+            color:#fff;
+            font-size: 16px;
+            min-height: 40px;
+        }
+    }
+    
+    &_conteiner{
+        font-size: 18px;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 8px;
+
+        &_price{
+            padding-top: 5px;
+        }
+    }
+}
+
+.slider_item:hover{
+    border-color: #fbbb43;
+    color: #fbbb43;
+}
+
+.conteiner_buttons{
+    display: flex;
+    justify-content: space-between;
+
+    div{
+        cursor: pointer;
+        padding: 0 10px 0 10px;
+        margin-top: 5px;
+        font-size: 32px;
+        border: 1px solid #fff;
+        border-radius: 50%;
+        transition: all 0.5s;
+    }
+
+    div:hover{
+        border-color: #fbbb43;
+        color:#fbbb43;
+    }
+}
