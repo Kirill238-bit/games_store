@@ -2,8 +2,6 @@ import style from './catalogPromo.module.scss'
 import {GamesMassProps} from '@/data/types/GamesMassProps'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useState } from 'react'
-
 
 const CatalogPromo:React.FC<GamesMassProps>=({max,Games,header,button})=>{
     return(

@@ -1,24 +1,17 @@
 import style from "@/styles/gameItem.module.scss"
 import { getGameByID } from "@/app/actions/getGame";
-import { GamesMassive } from "@/data/types/GamesMassProps";
 import Image from 'next/image'
 import { getSimilarGames } from "@/app/actions/getSImilar";
 import SimilarGamesSlider from "@/components/similarGamesSlider/similarGamesSlider";
+import DescriptionGame from "@/components/descriptionGame/descriptionGame"
+import { Params } from "@/data/types/Params";
 
-export interface Params{
-  params:{
-    id:number
-  }
-}
+
 export default function gameItem({ params:{id} }: Params) {
 
   const game = getGameByID(+id);
 
-  //console.log(game);
-
   const gamesWithGenre = getSimilarGames(game.genres);
-
-  console.log(gamesWithGenre);
 
   return(
     <div className={style.wrapper}>
@@ -92,8 +85,8 @@ export default function gameItem({ params:{id} }: Params) {
           <SimilarGamesSlider Games={gamesWithGenre}/>
         </div>
 
-        <div className={style.description}>
-          здесь описание игры
+        <div>
+          <DescriptionGame description={game.description} title={game.titile}/>
         </div>
       </div>
     </div>
