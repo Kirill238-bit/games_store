@@ -1,10 +1,14 @@
 'use client'
 import CatalogPromo from '@/components/catalogPromo/catalogPromo'
 import { Games } from '@/data/games'
+import { CartItem } from '@/data/types/CartItems'
 import { GamesMassive } from '@/data/types/GamesMassProps'
 import style from '@/styles/catalog.module.scss'
 import { useEffect, useState } from 'react'
 
+export function create(item:CartItem){
+    return item;
+}
 export default function Catalog(){
     const [sortBy,setSortBy]=useState<string>("");
     const [sortedGames,setSortedGames]=useState<GamesMassive[]>([]);
@@ -57,7 +61,7 @@ export default function Catalog(){
         
     },[sortBy,selectedGenre,SelectedDeveloper,SelectedPublisher,resetFilters]);
 
-    //массив для издателей и разрабов
+    //массив для издателей и разрабов(фильтры)
     const uniqueArr = Games.filter((game, index, self) =>
         index === self.findIndex((g) => (
         g.publisher === game.publisher

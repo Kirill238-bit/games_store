@@ -1,3 +1,5 @@
+import { CartItem } from "./CartItems";
+
  export type GamesMassive=
     {
     id:number,

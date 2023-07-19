@@ -5,6 +5,7 @@ import { Games } from '@/data/games'
 import CatalogPromo from '@/components/catalogPromo/catalogPromo'
 
 
+
 export default function Home() {
   
   return (
@@ -13,7 +14,7 @@ export default function Home() {
         <Slider sliderGames={SliderGames}/>
       </div>
       <div>
-        <CatalogPromo max={10} Games={Games} header={"Лидеры продаж"} button={"каталог"}/>
+        <CatalogPromo max={10} Games={Games} header={"Лидеры продаж"} button={"каталог"} />
       </div>
     </main>
   )
