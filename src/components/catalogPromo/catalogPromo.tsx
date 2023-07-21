@@ -19,8 +19,13 @@ const CatalogPromo:React.FC<GamesMassProps>=({max,Games,header,button})=>{
       name: game.name,
       price: game.price,
       img: game.img,
-  };
-    setCartItems([...CartItems, newItem]);
+    };
+      if(CartItems.find((item:CartItem)=> item.id===newItem.id)){
+        alert('Товар уже добавлен в корзину');
+      }
+      else{
+        setCartItems([...CartItems, newItem]);
+      }
   } 
   console.log(CartItems);
     return(

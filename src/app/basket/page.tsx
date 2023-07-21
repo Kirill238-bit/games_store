@@ -10,10 +10,28 @@ import { Context } from '../actions/context';
 export default function Basket(){
   const {CartItems,setCartItems}=useContext(Context);
 
+  const getTotalPrice = (CartItems: CartItem[]):number => {
+    let total = 0;
+
+    for (let item of CartItems) {
+      const itemCost = item.price*1;
+      total += itemCost;
+    }
+    return total;
+  }
+
+  function deleteFromCart(item:CartItem){
+    setCartItems(CartItems.filter((game:CartItem)=>game.id!=item.id))
+  }
+  
     return (
       <div className={style.wrapper}>
+        {CartItems.length === 0 ? (
+        <p>Корзина пуста</p>
+          ) : (
+        <>
         <div className={style.column_items}>
-        <span className={style.title}>МОЙ ЗАКАЗ <span>2</span></span>
+        <span className={style.title}>МОЙ ЗАКАЗ <span>{CartItems.length}</span></span>
           {CartItems.map((game:CartItem)=>(
             <div key={game.id} className={style.item_conteiner}>
               <Link href={`/gameItem/${game.id}`}>
@@ -28,7 +46,7 @@ export default function Basket(){
               <div className={style.info}>
                 <div className={style.info_title}>
                   <Link href={`/gameItem/${game.id}`}><div>{game.name}</div></Link>
-                  <div>x</div>
+                  <div onClick={()=>deleteFromCart(game)}>x</div>
                 </div>
                 <div className={style.price}>{game.price}</div>
                 <div className={style.subtitle}>
@@ -41,9 +59,11 @@ export default function Basket(){
         </div>
 
         <div className={style.total_conteiner}>
-          <div className={style.total_price}>Итого <span>3498 р</span></div>
+          <div className={style.total_price}>Итого <span>{getTotalPrice(CartItems)} р</span></div>
           <div className={style.button}>оформить заказ</div>
         </div>
+        </>
+        )}
       </div>
-    );
+    )
 }
