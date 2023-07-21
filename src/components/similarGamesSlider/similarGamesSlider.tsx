@@ -45,10 +45,15 @@ const SimilarGamesSlider:React.FC<SimilarGamesProps>=({Games})=>{
             </div>
 
             <div className={style.conteiner_buttons}>
-                <div onClick={setPrev}>
+                <div className={style.button} onClick={setPrev}>
                     {'<'}
                 </div>
-                <div onClick={setNext}>
+                <div className={style.progressbar}>
+                    <div className={style.progressbar_value}
+                    style={{ transform: `translateX(${(position* 100)}%)`}}>
+                    </div>
+                </div>
+                <div className={style.button} onClick={setNext}>
                     {'>'}
                 </div>
             </div>

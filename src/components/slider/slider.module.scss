@@ -43,26 +43,24 @@
     bottom: 480px;
     margin-left: 5%;
     
-    div{
+    .button{
         border-radius: 50%;
         
     }
 }
 
-.radioButtons{
-    div{
-        width: 10px;
-        height: 10px;
-        margin-top: 30px;
-        margin-left:18px;
-        margin-bottom: 30px;
-        background-color: #cdcdc8;
-    }
-}
+.progressbar{
+    height: 250px;
+    width: 3px;
+    background: #000;
+    overflow: hidden;
+    margin-left: 20px;
 
-.radio{
-    background-color: #cdcdc8;
+    &_value{
+        height: 16.5%;
+        width: 5px;
+        background: #fff;
+        transition: all 3s;
     }
-.radio_active{
-    background-color: black;
-    }
+    margin-bottom: 5px;
+}
