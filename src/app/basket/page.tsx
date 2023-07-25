@@ -60,7 +60,7 @@ export default function Basket(){
 
         <div className={style.total_conteiner}>
           <div className={style.total_price}>Итого <span>{getTotalPrice(CartItems)} р</span></div>
-          <div className={style.button}>оформить заказ</div>
+          <div className={style.button} onClick={()=>alert('Спасибо за покупку!')}>оформить заказ</div>
         </div>
         </>
         )}

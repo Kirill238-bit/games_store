@@ -4,7 +4,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
 import { CartItem } from '@/data/types/CartItems'
-import Basket from '@/app/basket/page'
 import { useContext } from 'react'
 import { Context } from '@/app/actions/context'
 
@@ -12,6 +11,8 @@ import { Context } from '@/app/actions/context'
 const CatalogPromo:React.FC<GamesMassProps>=({max,Games,header,button})=>{
   
   const{CartItems,setCartItems}=useContext(Context);
+  const[pagination,setPagination]=useState(10);
+  max=pagination;
 
   function addToCart(game:GamesMassive){
     const newItem: CartItem = {
@@ -54,7 +55,7 @@ const CatalogPromo:React.FC<GamesMassProps>=({max,Games,header,button})=>{
         ))}
         </div>
         <Link href="/catalog">
-            <div className={style.catalog_promo_button}>
+            <div className={style.catalog_promo_button} onClick={()=>setPagination(pagination+10)}>
               {button}
             </div>
           </Link>
