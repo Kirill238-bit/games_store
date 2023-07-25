@@ -105,3 +105,16 @@
     scale: (1.1);
 }
 
+//mobile
+
+@media (max-width:768px) {
+    .shop_item{
+        min-width: 210px;
+    }
+    .catalog_promo{
+        flex-wrap: nowrap;
+        overflow-x: scroll;
+        justify-content: flex-start;
+        padding-bottom: 20px;
+    }
+}

@@ -64,3 +64,33 @@
     }
     margin-bottom: 5px;
 }
+
+//mobile
+@media (max-width:768px) {
+    .conteiner_slider{
+        border-radius: 0;
+    }
+    .slider{
+        img{
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .conteiner_buttons{
+        margin-left:40%;
+        bottom: 720px;
+
+        .progressbar{
+            display: none;
+        }
+        &_prev,&_next{
+            background-color: #fff;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        &_next{
+            margin-top: 600px;
+        }
+    }
+}

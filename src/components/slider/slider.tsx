@@ -16,7 +16,6 @@ const Slider:React.FC<SliderProps>=({sliderGames})=>{
     const setNext=()=>{   
         if (position >= 0) setPosition(position+1);
         if(position===5) setPosition(position+0);
-       // active();
         console.log(position);
     }
     
