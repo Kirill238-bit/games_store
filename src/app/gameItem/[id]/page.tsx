@@ -1,3 +1,4 @@
+'use client'
 import style from "@/styles/gameItem.module.scss"
 import { getGameByID } from "@/app/actions/getGame";
 import Image from 'next/image'
@@ -5,6 +6,10 @@ import { getSimilarGames } from "@/app/actions/getSImilar";
 import SimilarGamesSlider from "@/components/similarGamesSlider/similarGamesSlider";
 import DescriptionGame from "@/components/descriptionGame/descriptionGame"
 import { Params } from "@/data/types/Params";
+import { useContext } from "react";
+import { Context } from "@/app/actions/context";
+import { GamesMassive } from "@/data/types/GamesMassProps";
+import { CartItem } from "@/data/types/CartItems";
 
 
 export default function gameItem({ params:{id} }: Params) {
@@ -12,6 +17,22 @@ export default function gameItem({ params:{id} }: Params) {
   const game = getGameByID(+id);
 
   const gamesWithGenre = getSimilarGames(game.genres);
+
+  const{CartItems,setCartItems}=useContext(Context);
+  function addToCart(game:GamesMassive){
+    const newItem: CartItem = {
+      id: game.id,
+      name: game.name,
+      price: game.price,
+      img: game.img,
+    };
+      if(CartItems.find((item:CartItem)=> item.id===newItem.id)){
+        alert('Товар уже добавлен в корзину');
+      }
+      else{
+        setCartItems([...CartItems, newItem]);
+      }
+  } 
 
   return(
     <div className={style.wrapper}>
@@ -29,7 +50,7 @@ export default function gameItem({ params:{id} }: Params) {
           <div className={style.title_availeble}><li>В наличии</li></div>
 
           <div className={style.action}>
-            <div className={style.action_button}>В корзину</div>
+            <div className={style.action_button} onClick={()=>addToCart(game)}>В корзину</div>
             <div className={style.action_price}>{game.price} ₽</div>
           </div>
 

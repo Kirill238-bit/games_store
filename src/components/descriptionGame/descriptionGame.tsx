@@ -1,7 +1,7 @@
 'use client'
 import { DescriptionProps } from '@/data/types/DescriptionProps';
 import style from './descriptionGame.module.scss'
-import { useEffect, useMemo, useState } from 'react';
+import { useState } from 'react';
 
 const DescriptionGame:React.FC<DescriptionProps>=({title,description})=>{
     const [about,setAbout]=useState(true);

@@ -9,6 +9,9 @@
         color:#fff;
     }
 }
+.delete_mobile{
+    display: none;
+}
 
 .column_items{
     display: block;
@@ -40,8 +43,7 @@
 }
 
 .info{
-    display: block;
-
+    display:block;
 
     &_title{
         display: flex;
@@ -52,7 +54,7 @@
 
     .price{
         color: #fbbb43;
-        display: block;
+        display: flex;
         font-size: 24px;
         margin-top: 20px;
         margin-bottom: 30px;
@@ -92,7 +94,7 @@
 }
 
 .button{
-    display: inline;
+    display: inline-block;
     text-transform: uppercase;
     padding:11px 12px 8px 12px;
     background: #fbbb43;
@@ -105,4 +107,49 @@
 .button:hover{
     background-color:#fff;
     
+}
+
+//mobile
+
+@media (max-width:768px) {
+    .wrapper{
+        margin: 0;
+        flex-direction: column;
+    }
+    .item_conteiner{
+        flex-direction: column;
+        align-items: center;
+    }
+    .image{
+        margin: 0;
+        margin-bottom: 24px;
+    }
+    .info_title{
+        justify-content: center;
+    }
+    .delete{
+        display: none;
+    }
+    .delete_mobile{
+        display: block;
+        font-size: 32px;
+        top:1;
+        right: 0;
+        position: absolute;
+    }
+    .price{
+        justify-content: center;
+    }
+    .subtitle{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .total_conteiner{
+        border:none;
+        border-top:1px solid rgba(255,255,255,.5);
+        padding: 32px 50px;
+        border-radius: none;
+    }
 }

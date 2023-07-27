@@ -102,3 +102,13 @@
         transition: all 3s;
     }
 }
+
+//mobile
+@media (max-width:768px) {
+    .wrapper_slider{
+        overflow-x: scroll;
+    }
+    .conteiner_buttons{
+        display: none;
+    }
+}

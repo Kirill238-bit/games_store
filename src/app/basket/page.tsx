@@ -34,6 +34,7 @@ export default function Basket(){
         <span className={style.title}>МОЙ ЗАКАЗ <span>{CartItems.length}</span></span>
           {CartItems.map((game:CartItem)=>(
             <div key={game.id} className={style.item_conteiner}>
+              <div onClick={()=>deleteFromCart(game)} className={style.delete_mobile}>x</div>
               <Link href={`/gameItem/${game.id}`}>
               <div className={style.image}>
                 <Image src={game.img}
@@ -46,9 +47,9 @@ export default function Basket(){
               <div className={style.info}>
                 <div className={style.info_title}>
                   <Link href={`/gameItem/${game.id}`}><div>{game.name}</div></Link>
-                  <div onClick={()=>deleteFromCart(game)}>x</div>
+                  <div onClick={()=>deleteFromCart(game)} className={style.delete}>x</div>
                 </div>
-                <div className={style.price}>{game.price}</div>
+                <div className={style.price}>{game.price} ₽</div>
                 <div className={style.subtitle}>
                   <div>Регион активации:<span>Россия, Украина и СНГ</span></div>
                   <div>Сервис активации:<span>Steam</span></div>
@@ -59,7 +60,7 @@ export default function Basket(){
         </div>
 
         <div className={style.total_conteiner}>
-          <div className={style.total_price}>Итого <span>{getTotalPrice(CartItems)} р</span></div>
+          <div className={style.total_price}>Итого <span>{getTotalPrice(CartItems)} ₽</span></div>
           <div className={style.button} onClick={()=>alert('Спасибо за покупку!')}>оформить заказ</div>
         </div>
         </>
