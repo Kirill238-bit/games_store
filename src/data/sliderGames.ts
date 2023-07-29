@@ -1,6 +1,4 @@
-
-
- export const SliderGames=[
+export const SliderGames=[
     {
       img:'/images/sliderImages/Control.jpeg',
       name:'Control',

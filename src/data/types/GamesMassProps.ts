@@ -1,6 +1,4 @@
-import { CartItem } from "./CartItems";
-
- export type GamesMassive=
+export type GamesMassive=
     {
     id:number,
     name:string,
@@ -15,11 +13,12 @@ import { CartItem } from "./CartItems";
     price:number,
     }
 
- export type GamesMassProps=
+export type GamesMassProps=
     {
     Games:GamesMassive[];
     max:number;
     header:string;
     button:string;
+    link?:boolean;
     }
 

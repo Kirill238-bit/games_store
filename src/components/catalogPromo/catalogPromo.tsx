@@ -8,11 +8,23 @@ import { useContext } from 'react'
 import { Context } from '@/app/actions/context'
 
 
-const CatalogPromo:React.FC<GamesMassProps>=({max,Games,header,button})=>{
+const CatalogPromo:React.FC<GamesMassProps>=({max,Games,header,button,link})=>{
   
-  const{CartItems,setCartItems}=useContext(Context);
-  const[pagination,setPagination]=useState(10);
+  const {CartItems,setCartItems}=useContext(Context);
+  const [pagination,setPagination]=useState(10);
   max=pagination;
+
+    function paginate(pagination:number){
+      if(pagination>=10){
+        setTimeout(async()=>{
+          setPagination(pagination+10)
+        },1000)
+      }
+        if(pagination==50){
+        setPagination(pagination);
+        }
+        return pagination;
+    } 
 
   function addToCart(game:GamesMassive){
     const newItem: CartItem = {
@@ -48,17 +60,23 @@ const CatalogPromo:React.FC<GamesMassProps>=({max,Games,header,button})=>{
               <Link href={`/gameItem/${game.id}`}><div className={style.shop_item_title_name}>{game.name}</div></Link>
                 <div className={style.shop_item_conteiner}>
                   <div className={style.shop_item_conteiner_price}>{game.price} ₽</div>
-                 <div className={style.shop_item_conteiner_basket_button}  onClick={()=>addToCart(game)}>в корзину</div>
+                 <div className={style.shop_item_conteiner_basket_button} onClick={()=>addToCart(game)}>в корзину</div>
                 </div>
             </div>
           </div>
         ))}
         </div>
-        <Link href="/catalog">
-            <div className={style.catalog_promo_button} onClick={()=>setPagination(pagination+10)}>
-              {button}
-            </div>
-          </Link>
+        {link ===true? 
+        <Link href='/catalog'>
+          <div className={style.catalog_promo_button}>
+            {button}
+          </div>  
+        </Link>
+        :
+          <div className={style.catalog_promo_button} onClick={()=>paginate(pagination)}>
+            {button}
+          </div>
+          }
       </div>
     )
 }

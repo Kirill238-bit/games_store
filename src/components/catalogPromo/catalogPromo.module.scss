@@ -35,6 +35,7 @@
         background-color: #fbbb43;
         transition: all .3s;
         text-align: center;
+        cursor: pointer;
     }
 
     &_button:hover{
@@ -106,15 +107,18 @@
 }
 
 //mobile
-
 @media (max-width:768px) {
+    .catalog_promo_conteiner{
+        margin:0;
+    }
     .shop_item{
-        min-width: 210px;
+        min-width: 174px;
+        margin: 0 5px 20px;
+        width:calc(100%/2 - 12px);
     }
     .catalog_promo{
-        flex-wrap: nowrap;
-        overflow-x: scroll;
         justify-content: flex-start;
+        align-items: flex-start;
         padding-bottom: 20px;
     }
 }
