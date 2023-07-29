@@ -5,18 +5,15 @@ import { useState } from 'react';
 import { SliderProps } from '@/data/types/SliderProps';
 
 const Slider:React.FC<SliderProps>=({sliderGames})=>{
-
     const [position,setPosition]=useState(0);
     //позия слайдера
     const setPrev=()=>{
         if (position > 0) setPosition(position-1);
         if(position===0) setPosition(0);
-        console.log(position);
     }
     const setNext=()=>{   
         if (position >= 0) setPosition(position+1);
         if(position===5) setPosition(position+0);
-        console.log(position);
     }
     
     return(

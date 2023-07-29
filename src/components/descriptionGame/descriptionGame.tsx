@@ -7,7 +7,8 @@ const DescriptionGame:React.FC<DescriptionProps>=({title,description})=>{
     const [about,setAbout]=useState(true);
     const [system,setSystem]=useState(false);
     const [activation,setActivation]=useState(false);
-
+    
+    //отслеживания нажатия на нужную инфу
     const About=()=>{
         setSystem(false);
         setActivation(false);
@@ -24,9 +25,6 @@ const DescriptionGame:React.FC<DescriptionProps>=({title,description})=>{
         setAbout(false);
     }
 
-    console.log(`about:${about}`)
-    console.log(`system:${system}`)
-    console.log(`activation:${activation}`)
     return(
         <div className={style.wrapper}>
             <div className={style.navigation}>

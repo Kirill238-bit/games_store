@@ -14,11 +14,12 @@ import { CartItem } from "@/data/types/CartItems";
 
 export default function gameItem({ params:{id} }: Params) {
 
-  const game = getGameByID(+id);
+  const game = getGameByID(+id);//получение игры которую отрисовать
 
-  const gamesWithGenre = getSimilarGames(game.genres);
+  const gamesWithGenre = getSimilarGames(game.genres);//похожие игры
 
   const{CartItems,setCartItems}=useContext(Context);
+
   function addToCart(game:GamesMassive){
     const newItem: CartItem = {
       id: game.id,

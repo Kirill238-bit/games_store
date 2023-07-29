@@ -23,10 +23,16 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-const [CartItems,setCartItems]=useState<CartItem[]>([]);
+const [CartItems,setCartItems]=useState<CartItem[]>([]);//игры для корзины
   return (
     <html lang="en">
-     <body className={inter.className}><Context.Provider value={{CartItems,setCartItems}}><Navbar/>{children}<Footer/></Context.Provider></body>
+      <body className={inter.className}>
+        <Context.Provider value={{CartItems,setCartItems}}>
+          <Navbar/>
+          {children}
+          <Footer/>
+        </Context.Provider>
+      </body>
     </html>
   )
 }

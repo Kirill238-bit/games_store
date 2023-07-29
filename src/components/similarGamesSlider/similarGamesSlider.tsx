@@ -7,16 +7,14 @@ import style from './similarGamesSlider.module.scss'
 
 const SimilarGamesSlider:React.FC<SimilarGamesProps>=({Games})=>{
     const [position,setPosition]=useState(0);
-
+    //позиция слайдера
     const setPrev=()=>{
         if (position > 0) setPosition(position-1);
         if(position===0) setPosition(0);
-        console.log(position);
     }
     const setNext=()=>{   
         if (position >= 0) setPosition(position+1);
         if(position===7) setPosition(position+0);
-        console.log(position);
     }
     return(
         <div className={style.wrapper}>

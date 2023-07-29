@@ -11,6 +11,7 @@ import { Context } from '@/app/actions/context'
 const CatalogPromo:React.FC<GamesMassProps>=({max,Games,header,button,link})=>{
   
   const {CartItems,setCartItems}=useContext(Context);
+  //пагинция для вывода игр
   const [pagination,setPagination]=useState(10);
   max=pagination;
 
@@ -39,8 +40,8 @@ const CatalogPromo:React.FC<GamesMassProps>=({max,Games,header,button,link})=>{
       else{
         setCartItems([...CartItems, newItem]);
       }
-  } 
-  console.log(CartItems);
+  }
+  
     return(
         <div className={style.catalog_promo_conteiner}>
         <h2 className={style.catalog_promo_conteiner_title}>{header}</h2>
